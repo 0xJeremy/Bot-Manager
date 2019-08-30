@@ -2,8 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Legend from './Legend'
-import CardHeaderTypes from './RobotCard'
+import Dashboard from './Dashboard'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,13 +43,11 @@ function MainContents(props) {
 		<div>
 			<div className={classes.drawerHeader} />
       <TabPanel value={value} index={0} className={classes.tab}>
-      3D Brain Model Here
-      <CardHeaderTypes />
-      <Legend />
+      <Dashboard />
       </TabPanel>
 
       <TabPanel value={value} index={1} className={classes.tab}>
-      2D Heatmap Here
+      Extra Options Here
       </TabPanel>
 
     </div>
