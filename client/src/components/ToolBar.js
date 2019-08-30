@@ -82,7 +82,7 @@ function ToolBar(props) {
 			<Typography className={classes.name}>[ro]Bot Manager</Typography>
       <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs" className={classes.title}>
         <StyledTab label="Dashboard" href="/Dashboard" {...a11yProps(0)} />
-        <StyledTab label="Extras" href="/extras" {...a11yProps(1)} />
+        <StyledTab label="Status Monitor" href="/status" {...a11yProps(1)} />
       </StyledTabs>
     </Toolbar>
 	)

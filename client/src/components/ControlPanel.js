@@ -3,13 +3,19 @@ import { makeStyles } from "@material-ui/core/styles";
 import Build from "@material-ui/icons/Build";
 import OpenWith from "@material-ui/icons/OpenWith";
 import Grid from "@material-ui/core/Grid";
+import Slider from '@material-ui/core/Slider';
+import Typography from '@material-ui/core/Typography';
 import GridItem from "./packs/GridItem.js";
 import Card from "./packs/Card.js";
 import CardBody from "./packs/CardBody.js";
 import CardHeader from "./packs/CardHeader.js";
 import CardIcon from "./packs/CardIcon.js";
-import Button from "./packs/Button.js"
-import ManualControl from "./ManualControl.js"
+import Button from "./packs/Button.js";
+import ManualControl from "./ManualControl.js";
+
+function valuetext(value) {
+  return `${value}°C`;
+}
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -34,14 +40,18 @@ export default function ControlPanel() {
           </Button>
         </Grid>
         <Grid item xs={4}>
-          <Button variant="outlined" color="info" className={classes.button} fullWidth>
-            Camera Mode
-          </Button>
+          <Typography id="discrete-slider" gutterBottom>
+            Robot Speed Controller
+          </Typography>
+          <Slider defaultValue={50} getAriaValueText={valuetext} aria-labelledby="discrete-slider"
+            valueLabelDisplay="auto" step={10} marks min={10} max={100} />
         </Grid>
         <Grid item xs={4}>
-          <Button variant="outlined" color="info" className={classes.button} fullWidth>
-            Camera Mode
-          </Button>
+          <Typography id="discrete-slider" gutterBottom>
+            Instruction Duration (sec)
+          </Typography>
+          <Slider defaultValue={1} getAriaValueText={valuetext} aria-labelledby="discrete-slider"
+            valueLabelDisplay="auto" step={0.5} marks min={0.5} max={5} />
         </Grid>
       </React.Fragment>
     );

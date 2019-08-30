@@ -50,7 +50,7 @@ function MainContents(props) {
       </TabPanel>
 
       <TabPanel value={value} index={1} className={classes.tab}>
-      Extra Options Here
+      // coming soon: a robot status monitor //
       </TabPanel>
 
     </div>
