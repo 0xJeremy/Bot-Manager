@@ -1,5 +1,6 @@
 html {
 	background: #000;
+	overflow-y: hidden;
 }
 
 body {

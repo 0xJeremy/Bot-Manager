@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   tab: {
     backgroundColor: '#000',
     color: '#fff',
-    fontSize: '1.5rem'
+    fontSize: '1.5rem',
   }
 }));
 
@@ -43,7 +43,7 @@ function MainContents(props) {
 		<div>
 			<div className={classes.drawerHeader} />
       <TabPanel value={value} index={0} className={classes.tab}>
-      <Dashboard />
+        <Dashboard />
       </TabPanel>
 
       <TabPanel value={value} index={1} className={classes.tab}>

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import RobotCard from './RobotCard'
+import ControlPanel from './ControlPanel'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,6 +31,7 @@ export default function Dashboard() {
           <RobotCard />
         </Grid>
       </Grid>
+      <ControlPanel />
     </div>
   );
 }
