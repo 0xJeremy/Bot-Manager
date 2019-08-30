@@ -1,7 +1,7 @@
 {
-  "name": "bot_manager",
+  "name": "bot-manager",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Robot Manager for the common man",
   "main": "index.js",
   "scripts": {
     "client": "cd client && npm start",
@@ -10,12 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xJeremy/bot_manager.git"
+    "url": "git+https://github.com/0xJeremy/Bot-Manager.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Jeremy Kanovsky",
+    "url": "https://jeremykanovsky.com"
+  },
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/0xJeremy/bot_manager/issues"
+    "url": "https://github.com/0xJeremy/Bot-Manager/issues"
   },
-  "homepage": "https://github.com/0xJeremy/bot_manager#readme"
+  "homepage": "https://github.com/0xJeremy/Bot-Manager#readme"
 }

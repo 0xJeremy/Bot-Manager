@@ -1,5 +1,5 @@
 {
-  "name": "bot-manager",
+  "name": "bot-manager-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +15,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
+  "author": {
+    "name": "Jeremy Kanovsky",
+    "url": "https://jeremykanovsky.com"
+  },
+  "license": "MIT",
   "eslintConfig": {
     "extends": "react-app"
   },
