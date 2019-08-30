@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
 
 function Page() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(false);
+  const [value, setValue] = React.useState(0); // Use 'false' to start without a tab selected
 
   function handleChange(event, newValue) {
     setValue(newValue);

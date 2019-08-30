@@ -9,7 +9,6 @@ import CardBody from "./packs/CardBody.js";
 import CardHeader from "./packs/CardHeader.js";
 import CardIcon from "./packs/CardIcon.js";
 import Button from "./packs/Button.js"
-import dashboardStyle from "./packs/dashboardStyle.js";
 import ManualControl from "./ManualControl.js"
 
 const useStyles = makeStyles(theme => ({
@@ -112,8 +111,8 @@ export default function ControlPanel() {
 
         <GridItem xs={8} md={6}>
           <Card>
-            <CardHeader color="info" icon>
-              <CardIcon color="info">
+            <CardHeader color="warning" icon>
+              <CardIcon color="warning">
                 <Build />
               </CardIcon>
             </CardHeader>
