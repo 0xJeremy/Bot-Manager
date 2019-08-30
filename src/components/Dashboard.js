@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import RobotCard from './RobotCard'
 
@@ -22,10 +22,11 @@ export default function Dashboard() {
     <div className={classes.root}>
       <Grid container spacing={2}>
         <Grid item xs={8}>
-          <Paper className={classes.paper}>xs=6</Paper>
+          <Container maxWidth="sm">
+            <img id='img' />
+          </Container>
         </Grid>
         <Grid item xs>
-          <Paper className={classes.paper}>xs</Paper>
           <RobotCard />
         </Grid>
       </Grid>

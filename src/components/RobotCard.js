@@ -1,14 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Language from "@material-ui/icons/Language";
-import Grid from "@material-ui/core/Grid";
-import GridItem from "./packs/GridItem.js";
 import Card from "./packs/Card.js";
 import CardBody from "./packs/CardBody.js";
 import CardHeader from "./packs/CardHeader.js";
-import CardIcon from "./packs/CardIcon.js";
-import Paper from '@material-ui/core/Paper';
 import StateTable from './StateTable.js';
+import PiStatus from './PiStatus.js'
 
 const useStyles = makeStyles(theme => ({
   cardTitle: {
@@ -31,20 +27,15 @@ export default function RobotCard() {
           <h4 className={classes.cardTitle}>Robot Status</h4>
         </CardHeader>
         <CardBody>
-          <Paper className={classes.root}>
             <StateTable />
-          </Paper>
         </CardBody>
       </Card>
       <Card>
         <CardHeader color="danger">
-          <h4 className={classes.cardTitle}>Full header coloured</h4>
-          <p>Category subtitle</p>
+          <h4 className={classes.cardTitle}>Raspberry Pi Info</h4>
         </CardHeader>
         <CardBody>
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to "Naviglio" where you can enjoy the main night
-          life in Barcelona...
+          <PiStatus />
         </CardBody>
       </Card>
     </div>

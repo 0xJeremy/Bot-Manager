@@ -13,25 +13,21 @@ const useStyles = makeStyles(theme => ({
     // minWidth: 650,
   },
   value: {
-  	paddingRight: '5px',
+  	paddingRight: '20px',
   },
-  units: {
-  	paddingLeft: '0px',
-  }
 }));
 
-function createData(name, value, units) {
-  return { name, value, units };
+function createData(name, value) {
+  return { name, value };
 }
 
 const rows = [
-  createData('CPU Usage', 50, '%'),
-  createData('RAM Usage', 128, 'mb'),
-  createData('Network Upload', 128, 'mb'),
-  createData('Network Download', 128, 'mb'),
+  createData('Device Name', 'Raspberry Pi'),
+  createData('IPv4 Address', '127.0.0.1'),
+  createData('IPv6 Address', '127.0.0.1'),
 ];
 
-export default function StateTable() {
+export default function PiStatus() {
 	const classes = useStyles();
 	return (
 		<Table className={classes.table}>
@@ -42,7 +38,6 @@ export default function StateTable() {
               {row.name}
             </TableCell>
             <TableCell className={classes.value} align="right">{row.value}</TableCell>
-            <TableCell className={classes.units} align="right">{row.units}</TableCell>
           </TableRow>
         ))}
       </TableBody>
