@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -6,12 +6,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    overflowX: 'auto',
-  },
-  table: {
-    // minWidth: 650,
-  },
   value: {
   	paddingRight: '5px',
   },
@@ -20,32 +14,69 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function createData(name, value, units) {
-  return { name, value, units };
+function GetCell(props) {
+  const classes = useStyles();
+  return (
+    <React.Fragment>
+      <TableCell className={classes.value} align="right">{props.val}</TableCell>
+      <TableCell className={classes.units} align="right">{props.unit}</TableCell>
+    </React.Fragment>
+  )
 }
 
-const rows = [
-  createData('CPU Usage', 50, '%'),
-  createData('RAM Usage', 128, 'mb'),
-  createData('Network Upload', 128, 'mb'),
-  createData('Network Download', 128, 'mb'),
-];
+class StateTable extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      cpu: 50,
+      ram: 128,
+      networkUp: 128,
+      networkDown: 128
+    }
+    props.socket.on('state', data => this.setState({
+      cpu: data.cpu,
+      ram: data.ram,
+      networkUp: data.netUp,
+      networkDown: data.netDown,
+    }));
+  }
 
-export default function StateTable() {
-	const classes = useStyles();
-	return (
-		<Table className={classes.table}>
-      <TableBody>
-        {rows.map(row => (
-          <TableRow key={row.name}>
+  render() {
+    return (
+      <Table>
+        <TableBody>
+
+          <TableRow>
             <TableCell component="th" scope="row">
-              {row.name}
+              CPU Usage
             </TableCell>
-            <TableCell className={classes.value} align="right">{row.value}</TableCell>
-            <TableCell className={classes.units} align="right">{row.units}</TableCell>
+            <GetCell val={this.state.cpu} unit={'%'}/>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  );
+
+          <TableRow>
+            <TableCell component="th" scope="row">
+              RAM Usage
+            </TableCell>
+            <GetCell val={this.state.ram} unit={'mb'}/>
+          </TableRow>
+
+          <TableRow>
+            <TableCell component="th" scope="row">
+              Network Upload
+            </TableCell>
+            <GetCell val={this.state.networkUp} unit={'mb'}/>
+          </TableRow>
+
+          <TableRow>
+            <TableCell component="th" scope="row">
+              Network Download
+            </TableCell>
+            <GetCell val={this.state.networkDown} unit={'mb'}/>
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+  }
 }
+
+export default StateTable;

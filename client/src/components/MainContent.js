@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Dashboard from './Dashboard'
+import Dashboard from './Dashboard';
+import socketIOClient from "socket.io-client";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -15,7 +16,7 @@ function TabPanel(props) {
       aria-labelledby={`nav-tab-${index}`}
       {...other}
     >
-      <Box p={3}>{children}</Box>
+      <Box p={1}>{children}</Box>
     </Typography>
   );
 };
@@ -39,11 +40,13 @@ function MainContents(props) {
 	const classes = useStyles();
 	const value = props.value;
 
+  const socket = socketIOClient();
+
 	return (
 		<div>
 			<div className={classes.drawerHeader} />
       <TabPanel value={value} index={0} className={classes.tab}>
-        <Dashboard />
+        <Dashboard socket={socket}/>
       </TabPanel>
 
       <TabPanel value={value} index={1} className={classes.tab}>

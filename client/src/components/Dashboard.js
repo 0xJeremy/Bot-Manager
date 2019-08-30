@@ -23,17 +23,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const classes = useStyles();
+
+  const socket = props.socket;
 
   return (
     <div className={classes.root}>
       <Grid container spacing={2}>
         <Grid className={classes.camera} item xs={8}>
-          <Camera />
+          <Camera socket={socket}/>
         </Grid>
         <Grid item xs>
-          <RobotCard />
+          <RobotCard socket={socket}/>
         </Grid>
       </Grid>
       <ControlPanel />

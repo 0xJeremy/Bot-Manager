@@ -41,3 +41,7 @@ app.use(function (req, res, next) {
 socket.on('image', (data) => {
  	io.emit('image', data);
 });
+
+socket.on('state', (data) => {
+	io.emit('state', data);
+});

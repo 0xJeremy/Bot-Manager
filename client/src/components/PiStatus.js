@@ -6,12 +6,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    overflowX: 'auto',
-  },
-  table: {
-    // minWidth: 650,
-  },
   value: {
   	paddingRight: '20px',
   },
@@ -27,10 +21,11 @@ const rows = [
   createData('IPv6 Address', '127.0.0.1'),
 ];
 
-export default function PiStatus() {
+export default function PiStatus(props) {
 	const classes = useStyles();
+  const socket = props.socket;
 	return (
-		<Table className={classes.table}>
+		<Table>
       <TableBody>
         {rows.map(row => (
           <TableRow key={row.name}>

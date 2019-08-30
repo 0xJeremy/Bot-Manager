@@ -18,8 +18,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function RobotCard() {
+export default function RobotCard(props) {
   const classes = useStyles();
+  const socket = props.socket;
   return (
     <div>
       <Card>
@@ -27,7 +28,7 @@ export default function RobotCard() {
           <h4 className={classes.cardTitle}>Robot Status</h4>
         </CardHeader>
         <CardBody>
-            <StateTable />
+            <StateTable socket={socket}/>
         </CardBody>
       </Card>
       <Card>
@@ -35,7 +36,7 @@ export default function RobotCard() {
           <h4 className={classes.cardTitle}>Raspberry Pi Info</h4>
         </CardHeader>
         <CardBody>
-          <PiStatus />
+          <PiStatus socket={socket}/>
         </CardBody>
       </Card>
     </div>
