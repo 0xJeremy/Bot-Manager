@@ -47,4 +47,4 @@ class Camera extends Component {
   } 
 }
 
-export default Camera
+export default Camera;
