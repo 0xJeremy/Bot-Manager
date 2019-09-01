@@ -3,7 +3,7 @@ const FireEye = require('fireeye');
 
 var socket = new FireEye(addr='127.0.0.1');
 
-// console.log("FireEye address " + socket.getAddress() + " port " + socket.getPort());
+console.log("FireEye address " + socket.getAddress() + " port " + socket.getPort());
 
 var app = express();
 
@@ -31,12 +31,6 @@ app.use(function (req, res, next) {
 ///////////////////////////
 /// FRONT-END ENDPOINTS ///
 ///////////////////////////
-
-// app.use('/', express.static(__dirname + '/'));
-
-// app.get('/', function(req, res) {
-//     res.render('../client/public/index.html');
-// });
 
 socket.on('image', (data) => {
  	io.emit('image', data);
