@@ -1,7 +1,7 @@
 const express = require('express');
-const FireEye = require('fireeye');
+const FireEye = require('./index.js');
 
-var socket = new FireEye(addr='127.0.0.1');
+var socket = new FireEye();
 
 console.log("FireEye address " + socket.getAddress() + " port " + socket.getPort());
 
@@ -33,7 +33,7 @@ app.use(function (req, res, next) {
 ///////////////////////////
 
 socket.on('image', (data) => {
- 	io.emit('image', data);
+	io.emit('image', data);
 });
 
 socket.on('state', (data) => {
