@@ -4,7 +4,7 @@ import sys
 import cv2
 from FireEye import FireEye
 
-socket = FireEye.FireEye()
+socket = FireEye()
 
 cap = cv2.VideoCapture(2) # Camera number goes here
 

@@ -13,3 +13,5 @@ NOTE: To use `npm start`, the Node package `concurrently` is required. Install w
 
 The front end page of this application is hosted on `localhost:3000`, while the server runs on `localhost:5000`.
 All requests made to the React application are proxied to the main server.
+
+![Bot-Manager Main Page](https://github.com/0xJeremy/Bot-Manager/blob/master/images/bot_manager.png)
