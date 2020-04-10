@@ -1,5 +1,7 @@
 # [ro]Bot Manager
 
+# THIS PROJECT IS NO LONGER MAINTAINED. USE [VIZ.ENGINE](https://github.com/0xJeremy/viz.engine) INSTEAD.
+
 ### Installation
 
 To install all packages, use `cd client && npm install`, and `cd server && npm install`.
